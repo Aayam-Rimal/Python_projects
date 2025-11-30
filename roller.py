@@ -35,5 +35,5 @@ while True:
   elif choice=="n":
    break
 
- except:
+ except ValueError:
   print("error!! enter a integer!")
