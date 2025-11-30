@@ -70,14 +70,14 @@ while True:
                    student=students[chc]
                    grade_input= input(f"enter grade(s) for {student.name} ")
                    if ',' in grade_input:
-                        grades= [int(g.strip()) for g in grade_input.split(',')]
+                        grades= [int(g.strip()) for g in grade_input.split(',')] # splits the grade by commas and converts to int
                         student.add_grade(grades)
                         print(f"grades added sucessfully for {student.name}!")
                    else:
                         grade=int(input(f"enter grade of student {student.name}: "))
                         student.add_grade(grade)
                         print(f"grade added sucessfully for {student.name}")
-         except:
+         except ValueError:
               print("invalid choice!!")
               continue
          
@@ -95,7 +95,7 @@ while True:
               print(f'grades of {student.name}:{student.grades}')
               print(f"average of this student is {student.calculate_average()}")
               print(f"letter grade of this student is {student.get_letter_grade()}")
-         except:
+         except ValueError:
               print("cannot get grade of this student!!")
               continue 
 
